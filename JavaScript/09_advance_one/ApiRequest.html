@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;text-align: center;">
+    <button class="show">Hitesh Info</button>
+    <div class="card"></div>
+    <p id="follow"></p>
+  
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    let imgUrl
+    let followers 
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET',requestUrl)
+    xhr.onreadystatechange =function(){
+    console.log(xhr.readyState);
+   
+    if(xhr.readyState ===4){
+       const data = JSON.parse(this.responseText);
+       console.log(typeof(data));
+       console.log(data);
+       followers = data.followers;
+       imgUrl = data.avatar_url
+       console.log(followers);
+    }   
+}
+xhr.send();
+    document.querySelector('.show').addEventListener('click',()=>{
+        const div = document.querySelector('.card')
+        console.log("clicked");
+   div.innerHTML = `<img src="${imgUrl}" alt="" srcset="", height="400px",width= '300px'>`
+   const p = document.getElementById('follow')
+   p.innerHTML = `<h2>Followers: ${followers}</h2>`
+   p.style.color = "white"
+
+    })
+</script>
+</html>
