@@ -15,23 +15,46 @@
   <script>
     let clear;
     let clock;
-    document.querySelector("#start").addEventListener("click", function () {
+    let lock = true;
+    let time1 = null;
+    let time = null;
+    const start = document.querySelector("#start");
+    start.addEventListener("click", function () {
       clock = document.querySelector(".clock");
       clock.style.color = "black";
       clock.innerHTML = "01:00";
-      let time = 60;
+
+      time = 60;
+
       clear = setInterval(function () {
         time--;
         clock.innerHTML = time >= 10 ? `00:${time}` : `00:0${time}`;
         if (time <= 10) clock.style.color = "red";
         if (time == 0) clearInterval(clear);
       }, 1000);
+      start.disabled = true;
     });
     document.querySelector("#stop").addEventListener("click", function () {
-      clearInterval(clear);
+      time1 = setTimeout(() => {
+        if (!lock) {
+          clearInterval(clear);
+          console.log(time);
+          start.disabled = false;
+          console.log("Click ckilc");
+          start.removeAttribute("disabled");
+        }
+        lock = false;
+      }, 300);
+      lock = false;
     });
     document.querySelector("#stop").addEventListener("dblclick", function () {
+      clearInterval(clear);
+      console.log(time);
+      lock = true;
+      clearTimeout(time1);
+      console.log("DBl ckilc");
       clock.innerHTML = "01:00";
+      start.disabled = false;
     });
   </script>
 </html>
