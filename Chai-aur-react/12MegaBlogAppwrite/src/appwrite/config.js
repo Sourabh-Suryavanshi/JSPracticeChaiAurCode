@@ -1,4 +1,4 @@
-import conf from "../conf/conf";
+  import conf from "../conf/conf";
 import {Client,ID,Databases,Storage,Query, Flag} from 'appwrite'
 
 
@@ -29,7 +29,7 @@ export class Service{
                 }
             )
                         } catch (error) {
-            console.log("Appwrite service :: cretePost :: error",error);
+            console.log("Appwrite service :: createPost :: error",error);
         }
     }
 
