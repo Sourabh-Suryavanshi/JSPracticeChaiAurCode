@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="" alt="no image" />
+    <img src="./Hanumanji1.jpg" alt="no image" width="400px" height="400px" />
+    <picture>
+      <source srcset="" />
+      <img />
+    </picture>
+
+    <!-- an image map generator -->
+
+    <img src="Hanumanji.jpg" usemap="#image-map" />
+
+    <map name="image-map">
+      <area
+        onclick="one()"
+        target=""
+        alt=""
+        title=""
+        href=""
+        coords="469,301,556,358"
+        shape="rect"
+      />
+      <area
+        onclick="two()"
+        target=""
+        alt=""
+        title=""
+        href=""
+        coords="637,208,751,267"
+        shape="rect"
+      />
+    </map>
+
+    <script>
+      function one() {
+        alert("ONE");
+      }
+
+      function two() {
+        alert("TWO");
+      }
+    </script>
+  </body>
+</html>

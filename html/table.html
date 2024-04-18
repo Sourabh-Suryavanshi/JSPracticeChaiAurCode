@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        text-align: center;
+        color: red;
+      }
+      td,
+      th {
+        border: 1px solid black;
+        padding: 10px;
+      }
+      tr:nth-child(even) {
+        background-color: #313131;
+      }
+    </style>
+  </head>
+  <body>
+    <table style="width: 100%">
+      <colgroup>
+        <col span="2" style="background-color: aqua" />
+      </colgroup>
+      <tr>
+        <th>Country</th>
+        <th>Country Code</th>
+        <th>Email</th>
+      </tr>
+      <tr>
+        <td>India</td>
+        <td>IN</td>
+        <td>india@google.com</td>
+      </tr>
+      <tr>
+        <td>United States of America</td>
+        <td>USA</td>
+        <td>usa@google.com</td>
+      </tr>
+      <tr>
+        <td>Japan</td>
+        <td>JP</td>
+        <td>jp@google.com</td>
+      </tr>
+      <tr>
+        <td>China</td>
+        <td>CN</td>
+        <td>cn@google.com</td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <th colspan="2">Country</th>
+        <td>India</td>
+        <td>Japan</td>
+      </tr>
+      <tr>
+        <th>CODE</th>
+        <td>IN</td>
+        <td>JP</td>
+      </tr>
+    </table>
+  </body>
+</html>
